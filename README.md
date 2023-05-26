@@ -1,4 +1,4 @@
-# Customer MAnagement Tool
+# Customer Management Tool
 ### Date: 5/26/23
 ### By: Jacquelyn Waller
 ### Links 
