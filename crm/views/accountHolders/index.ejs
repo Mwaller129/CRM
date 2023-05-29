@@ -1,0 +1,17 @@
+<h2>Client List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Client Name</th>
+            <th>Upcoming Activites</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <% accountHolder.forEach(function(a) { %>
+            <tr>
+                <td><%= a.clientName %></td>
+                <td><%= a.activies %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
