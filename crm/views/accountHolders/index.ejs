@@ -1,5 +1,6 @@
+<%- include('../partials/header') %>
 <h2>Client List</h2>
-<table>
+<table id="list">
     <thead>
         <tr>
             <th>Client Name</th>
@@ -7,11 +8,13 @@
         </tr>
     </thead>
     <tbody>
-        <% accountHolder.forEach(function(a) { %>
+        <% accountHolders.forEach(function(a) { %>
             <tr>
                 <td><%= a.clientName %></td>
                 <td><%= a.activies %></td>
+                <td><a href="/accountHolders/<%= a._id %>">DETAILS</a></td>
             </tr>
         <% }) %>
     </tbody>
 </table>
+<%- include('../partials/footer') %>

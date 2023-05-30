@@ -1,5 +1,5 @@
-const AccountHolder = ('../models/accountholder');
-const Client = ('../models/client');
+const AccountHolder = require('../models/accountHolder');
+const Client = require('../models/client');
 
 const index = async(req, res) => {
     const accountHolders = await AccountHolder.find({});

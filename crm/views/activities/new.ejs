@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+<form id="add-activity-form" action="/accountHolders/<%= client._id %>/activities" method="POST">
+    <label>Client</label>
+    <input name="client" required value="<%=client._id %>" type="hidden">
+    <label>Activity</label>
+    <input type="text" name="content">
+    <label>Date</label>
+    <input type="text" name="date">
+    <input type="submit" value="Add Activity">
+</form>
+<%- include('../partials/footer') %>

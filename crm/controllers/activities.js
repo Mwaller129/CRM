@@ -1,5 +1,5 @@
 const AccountHolder = require('../models/accountHolder');
-const Activity = require('../models/activity');
+
 
 const newActivity = async (req, res) => {
     const accountHolder = await AccountHolder.findById(req.params.id);
