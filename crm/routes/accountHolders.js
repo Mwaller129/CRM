@@ -5,9 +5,9 @@ const accountHoldersCtrl = require('../controllers/accountHolders');
 
 
 
-router.get('/', accountHoldersCtrl.index);
-router.get('/:id', accountHoldersCtrl.show);
-router.post('/new', accountHoldersCtrl.create);
+router.get('/accountHolders', accountHoldersCtrl.index);
+router.get('/accountHolders/clients', accountHoldersCtrl.show);
+router.post('/accountHolders/clients/new', accountHoldersCtrl.create);
 
 
 

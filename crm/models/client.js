@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const clientSchema = new Schema ({
     clientName: {
         type: String,
-        required: True
     },
     clientPhoneNumber: {
         type: Number
@@ -12,7 +11,7 @@ const clientSchema = new Schema ({
     clientEmailAddress: {
         type: String
     },
-    lastContact: {
+    notes: {
         Date
     },
     followUp: {

@@ -1,13 +1,15 @@
 const AccountHolder = ('../models/accountholder');
+const Client = ('../models/client');
 
 const index = async(req, res) => {
-    const accountHolder = await AccountHolder.find({})
-    res.render('accountHolders/index', {title: 'My Pipeline', accountHolders})
+    const accountHolders = await AccountHolder.find({});
+    res.render('accountHolders/index', {title: 'Clients', accountHolders});
 }
 
 const show = async(req, res) => {
     const accountHolder = await AccountHolder.findbyId(req.param.id)
-    res.render('accountHolder/client/show', {title: 'Client Details', accountHolder, client})
+    const clients = await Client.findbyId({accountHolder: req.param.id}).populate(accountHolder)
+    res.render('accountHolders/clients/show', {title: 'Client Details', accountHolder, clients})
 }
 const create = async(req, res) => {
     for ( let key in req.body){
@@ -18,7 +20,7 @@ const create = async(req, res) => {
         res.direct(`/clients/`);
     } catch (err) {
         console.log(err);
-        res.render('accountHolders/new', {errorMsg: err.message});
+        res.render('accountHolders/clients/new', {errorMsg: err.message});
     }
 }
 

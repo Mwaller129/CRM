@@ -9,6 +9,7 @@ const accountHolderSchema = new Schema({
     Activities: {
         Date
     }
+    
    
 })
 module.exports = ('AccountHolder', accountHolderSchema);
