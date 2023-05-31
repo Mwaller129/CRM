@@ -13,7 +13,7 @@
         <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>Home</a>
         <% if (user) { %>     
         <a href="/accountHolders" <%- title === 'Dashboard' ? 'class="active"' : '' %>>Dashboard</a>
-        <a href="/accountHolders/clients" <%- title === 'Clients' ? 'class="active"' : ''%>>Clients</a>
+        <a href="/clients" <%- title === 'Clients' ? 'class="active"' : ''%>>Clients</a>
         <a href="/logout">LOG OUT</a>
         <% } else { %>
           <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

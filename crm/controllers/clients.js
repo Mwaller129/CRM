@@ -3,7 +3,7 @@ const AccountHolder = require('../models/accountHolder');
 
 const index = async (req, res) => {
     const clients = await Client.find({});
-    res.render('accountHolders/clients/index', { title: 'Clients', clients});
+    res.render('clients/index', { title: 'Clients', clients});
 }
 const show = async (req, res) => {
     const clients = await Client.findById(req.params.id).populate('activities');
