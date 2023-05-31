@@ -7,6 +7,9 @@ const newActivity = async (req, res) => {
 }
 const create = async(req, res) => {
     const accountHolder = await AccountHolder.findById(req.params.id);
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     accountHolder.activities.push(req.body);
     try {
         await accountHolder.save();

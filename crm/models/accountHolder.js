@@ -8,11 +8,22 @@ const activitySchema = new Schema({
     appointmentTime: {
         Date
     },
-    client: {type: Schema.Types.ObjectId, ref: 'Client'}
+    client: {type: Schema.Types.ObjectId, ref: 'Client'},
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      },
+      userName: String,
+      userAvatar: String
+    }, {
+      timestamps: true
+
 });
 const accountHolderSchema = new Schema({
     Clients: {
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: 'Client'
     },
 
     Activities: [activitySchema]

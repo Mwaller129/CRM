@@ -11,5 +11,15 @@
     <div>Follow-Up:</div>
     <div><%= accountHolder.followUp %></div>
 </section>
-<a href="/accountHolders/clients/new">Add New Client</a>
+<br><br><h2>Activities</h2>
+<td> <%= a.activities %></td>
+<td>
+    <% if (user?._id.equals(a.user)) { %>
+        <form action="/accountHolder/<%= a._id %>?+method=DELETE" method="POST">
+            <button type="submit">X</button>
+        </form>
+   <% } %>
+</td>
+<a href="/clients/new">Add New Client</a>
+<a href="/activities/new">Add New Activity</a>
 <% } %> <%- include('../partials/footer') %>
