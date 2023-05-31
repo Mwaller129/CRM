@@ -11,8 +11,8 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
-var indexRouter = require('./routes/index');
-var accountHoldersRouter = require('./routes/accountHolders');
+const indexRouter = require('./routes/index');
+const accountHoldersRouter = require('./routes/accountHolders');
 const clientsRouter = require('./routes/clients');
 const activitesRouter = require('./routes/activities');
 

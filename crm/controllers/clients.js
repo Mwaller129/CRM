@@ -1,10 +1,9 @@
 const Client = require('../models/client')
 const AccountHolder = require('../models/accountHolder');
-const client = require('../models/client');
 
-const index = async (res, req) => {
+const index = async (req, res) => {
     const clients = await Client.find({});
-    res.render('accountHolders/clients', { title: 'Clients', clients});
+    res.render('accountHolders/clients/index', { title: 'Clients', clients});
 }
 const show = async (req, res) => {
     const clients = await Client.findById(req.params.id).populate('activities');

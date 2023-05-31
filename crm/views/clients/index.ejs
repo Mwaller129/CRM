@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<h2>Client List</h2>
+<table id="list">
+    <thead>
+        <tr>
+            <th>Client Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% clients.forEach(function(c) { %>
+            <tr>
+                <td><%= c.clientName %></td>
+                <td><a href="/accountHolders/clients/<%= c._id %>">DETAILS</a></td>
+            </tr>
+        <% }) %>
+        <a href="/clients/new">Add New Client</a>
+    </tbody>
+</table>
+<%- include('../partials/footer') %>

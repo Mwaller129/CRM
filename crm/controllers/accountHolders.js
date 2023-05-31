@@ -8,7 +8,7 @@ const index = async(req, res) => {
 
 const show = async(req, res) => {
     const accountHolder = await AccountHolder.findbyId(req.param.id)
-    const clients = await Client.findbyId({accountHolder: req.param.id}).populate(accountHolder)
+    const clients = await Client.findbyId({accountHolder: req.param.id}).populate('accountHolder')
     res.render('accountHolders/clients/show', {title: 'Client Details', accountHolder, clients})
 }
 const create = async(req, res) => {
