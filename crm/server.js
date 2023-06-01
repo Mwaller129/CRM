@@ -12,7 +12,7 @@ require('./config/database');
 require('./config/passport');
 
 const indexRouter = require('./routes/index');
-const dashboardsRouter = require('./routes/dashboards');
+
 const clientsRouter = require('./routes/clients');
 const activitesRouter = require('./routes/activities');
 
@@ -42,8 +42,8 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/dashboards', dashboardsRouter);
-app.use('/', clientsRouter);
+
+app.use('/clients', clientsRouter);
 app.use('/', activitesRouter);
 
 // catch 404 and forward to error handler

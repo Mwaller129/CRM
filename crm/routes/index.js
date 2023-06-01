@@ -22,8 +22,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/dashboards',
-    failureRedirect: '/dashboards'
+    successRedirect: '/',
+    failureRedirect: '/'
   }
 ));
 // OAuth logout route

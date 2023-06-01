@@ -1,5 +1,5 @@
 const Client = require('../models/client')
-const Dashboard = require('../models/dashboard');
+
 
 const index = async (req, res) => {
     const clients = await Client.find({});
@@ -7,20 +7,22 @@ const index = async (req, res) => {
 }
 const show = async (req, res) => {
     const clients = await Client.findById(req.params.id);
-    const activities = await Activity.find({_id: {$nin: clients.activity}}).sort('date');
-    res.render('dashboards/clients/show', {title: 'Client Detail', clients, activities})
+    //const activities = await Activity.find({_id: {$nin: clients.activity}}).sort('date');
+    res.render('clients/show', {title: 'Client Detail', clients})
 }
 
 const newClient = async (req, res) => {
-    const dashboard = await Dashboard.findById(req.params.id);
-    res.render('clients/new', {title: 'Add Client', dashboard});
+    const client = await Client.findById(req.params.id);
+    res.render('clients/new', {title: 'Add New Client', client});
 }
 
 const create = async (req, res) => {
-    const dashboard = await dashboard.findById(req.params.id);
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
     try {
         await Client.create(req.body);
-        res.redirect('/dashboards/clients');
+        res.redirect('/clients');
     } catch (err) {
         console.log(err)
     }

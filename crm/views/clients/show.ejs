@@ -6,20 +6,24 @@
     <div><%= clients.clientPhoneNumber %></div>
     <div>Client Email Address:</div>
     <div><%= clients.clientEmailAddress %></div>
-    <div>Notes:</div>
-    <div><%= clients.notes %></div>
+    <div>Status:</div>
+    <div><%= clients.status %></div>
     <div>Follow-Up:</div>
     <div><%= clients.followUp %></div>
-</section>
+    <div>Appointment Time:</div>
+    <div><%= clients.appointmentTime %></div>
+    <a href="/clients/new">Add New Client</a>
+
 <br><br><h2>Activities</h2>
-<td> <%= a.activities %></td>
+
+<a href="/activities/new">Add New Activity</a>
+</section>
 <td>
-    <% if (user?._id.equals(a.user)) { %>
-        <form action="/clients/<%= c._id %>?+method=DELETE" method="POST">
+    <% if (user?._id.equals(user)) { %>
+        <form action="/clients/<%= clients._id %>?_method=DELETE" method="POST">
             <button type="submit">X</button>
         </form>
    <% } %>
 </td>
-<a href="/clients/new">Add New Client</a>
-<a href="/activities/new">Add New Activity</a>
-<% } %> <%- include('../partials/footer') %>
+
+<%- include('../partials/footer') %>
