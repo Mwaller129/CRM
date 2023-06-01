@@ -28,10 +28,10 @@ const create = async (req, res) => {
     }
 }
 const deleteClient = (req, res, next) => {
-    Dashboard.findOne({'clients._id': req.params.is, 'clients.user': req.user._id}).then(function(dashboard){
-        if (!dashboard) return res.redirect('/dashboard');
-      dashboard.clients.removes(req.params.id);
-        dashboard.save().then(function() {
+    Client.findOne({'clients._id': req.params.is, 'clients.user': req.user._id}).then(function(dashboard){
+        if (!client) return res.redirect('/client');
+       clients.removes(req.params.id);
+        clients.save().then(function() {
             res.redirect(`/clients/${client._id}`);
         }).catch(function(err) {
             return next(err);

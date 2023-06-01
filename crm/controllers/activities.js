@@ -2,7 +2,8 @@ const Client = require('../models/client');
 
 
 const newActivity = async (req, res) => {
-    const clients = Client.find({});
+    const clients = await Client.findById(req.params.id);
+    console.log(clients._id)
     res.render('activities/new', {title: 'Add New Activity', clients});
 }
 const create = async(req, res) => {
@@ -13,9 +14,11 @@ const create = async(req, res) => {
 //    for (let key in req.body) {
 //     if (req.body[key] === '') delete req.body[key];
 //    }
-   try {
-    await Activity.create(req.body);
-    res.redirect('/clients/:id/activities');
+   console.log(client);
+  client.activity.push(req.body);
+  try {
+    await client.save();
+    res.redirect(`/clients/${client._id}`);
    } catch (err) {
     console.log(err);
    }

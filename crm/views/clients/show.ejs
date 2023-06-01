@@ -15,8 +15,11 @@
     <a href="/clients/new">Add New Client</a>
 
 <br><br><h2>Activities</h2>
+<% clients.activity.forEach (function(c) { %>
+    <%= c.content %>
 
-<a href="/activities/new">Add New Activity</a>
+<% }); %>
+<a href="/clients/<%= clients._id %>/activities/new">Add New Activity</a>
 </section>
 <td>
     <% if (user?._id.equals(user)) { %>
