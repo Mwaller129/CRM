@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<form id="add-activity-form" action="/accountHolders/<%= client._id %>/activities" method="POST">
+<form id="add-activity-form" action="/dashboards/<%= client._id %>/activities" method="POST">
     <label>Client</label>
     <input name="client" required value="<%=client._id %>" type="hidden">
     <label>Activity</label>

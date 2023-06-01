@@ -1,21 +1,21 @@
 <%- include('../partials/header') %>
 <section id="show-page">
     <div>Client Name:</div>
-    <div><%= accountHolder.clientName %></div>
+    <div><%= clients.clientName %></div>
     <div>Client Phone Number:</div>
-    <div><%= accountHolder.clientPhoneNumber %></div>
+    <div><%= clients.clientPhoneNumber %></div>
     <div>Client Email Address:</div>
-    <div><%= accountHolder.clientEmailAddress %></div>
+    <div><%= clients.clientEmailAddress %></div>
     <div>Notes:</div>
-    <div><%= accountHolder.notes %></div>
+    <div><%= clients.notes %></div>
     <div>Follow-Up:</div>
-    <div><%= accountHolder.followUp %></div>
+    <div><%= clients.followUp %></div>
 </section>
 <br><br><h2>Activities</h2>
 <td> <%= a.activities %></td>
 <td>
     <% if (user?._id.equals(a.user)) { %>
-        <form action="/accountHolder/<%= a._id %>?+method=DELETE" method="POST">
+        <form action="/clients/<%= c._id %>?+method=DELETE" method="POST">
             <button type="submit">X</button>
         </form>
    <% } %>

@@ -11,7 +11,7 @@
         <% clients.forEach(function(c) { %>
             <tr>
                 <td><%= c.clientName %></td>
-                <td><a href="/accountHolders/clients/<%= c._id %>">DETAILS</a></td>
+                <td><a href="/dashboards/clients/<%= c._id %>">DETAILS</a></td>
             </tr>
         <% }) %>
         <a href="/clients/new">Add New Client</a>

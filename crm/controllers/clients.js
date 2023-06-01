@@ -1,36 +1,36 @@
 const Client = require('../models/client')
-const AccountHolder = require('../models/accountHolder');
+const Dashboard = require('../models/dashboard');
 
 const index = async (req, res) => {
     const clients = await Client.find({});
     res.render('clients/index', { title: 'Clients', clients});
 }
 const show = async (req, res) => {
-    const clients = await Client.findById(req.params.id).populate('activities');
-    const activities = await Activity.find({_id: {$nin: client.activity}}).sort('date');
-    res.render('accountHolders/clients/show', {title: 'Client Detail', clients})
+    const clients = await Client.findById(req.params.id);
+    const activities = await Activity.find({_id: {$nin: clients.activity}}).sort('date');
+    res.render('dashboards/clients/show', {title: 'Client Detail', clients, activities})
 }
 
 const newClient = async (req, res) => {
-    const accountHolder = await AccountHolder.findById(req.params.id);
-    res.render('accountHolders/clients/new', {title: 'Add Client', accountHolder});
+    const dashboard = await Dashboard.findById(req.params.id);
+    res.render('clients/new', {title: 'Add Client', dashboard});
 }
 
 const create = async (req, res) => {
-    const accountHolder = await AccountHolder.findById(req.params.id);
+    const dashboard = await dashboard.findById(req.params.id);
     try {
         await Client.create(req.body);
-        res.redirect('/accountHolders/clients');
+        res.redirect('/dashboards/clients');
     } catch (err) {
         console.log(err)
     }
 }
 const deleteClient = (req, res, next) => {
-    AccountHolder.findOne({'clients._id': req.params.is, 'clients.user': req.user._id}).then(function(accountHolder){
-        if (!accountHolder) return res.redirect('/accountHolders');
-        accountHolder.clients.removes(req.params.id);
-        accountHolder.save().then(function() {
-            res.redirect(`/accountHolders/${accountHolder._id}`);
+    Dashboard.findOne({'clients._id': req.params.is, 'clients.user': req.user._id}).then(function(dashboard){
+        if (!dashboard) return res.redirect('/dashboard');
+      dashboard.clients.removes(req.params.id);
+        dashboard.save().then(function() {
+            res.redirect(`/clients/${client._id}`);
         }).catch(function(err) {
             return next(err);
         });

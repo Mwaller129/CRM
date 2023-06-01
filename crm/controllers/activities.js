@@ -1,22 +1,22 @@
-const AccountHolder = require('../models/accountHolder');
+const Dashboard= require('../models/dashboard');
 
 
 const newActivity = async (req, res) => {
-    const accountHolder = await AccountHolder.findById(req.params.id);
-    res.render('accountHolders/activities/new', {title: 'Add Activity', accountHolder});
+    const dashboard = await Dashboard.findById(req.params.id);
+    res.render('dashboards/activities/new', {title: 'Add Activity', dashboard});
 }
 const create = async(req, res) => {
-    const accountHolder = await AccountHolder.findById(req.params.id);
+    const dashboard = await Dashbaord.findById(req.params.id);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-    accountHolder.activities.push(req.body);
+    dashboard.activities.push(req.body);
     try {
-        await accountHolder.save();
+        await Dashboard.save();
     } catch (err) {
         console.log(err);
     }
-    res.redirect('/accountHolders/clients');
+    res.redirect('/dashboards/clients');
 }
 
 module.exports = {

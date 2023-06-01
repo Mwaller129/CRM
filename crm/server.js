@@ -12,7 +12,7 @@ require('./config/database');
 require('./config/passport');
 
 const indexRouter = require('./routes/index');
-const accountHoldersRouter = require('./routes/accountHolders');
+const dashboardsRouter = require('./routes/dashboards');
 const clientsRouter = require('./routes/clients');
 const activitesRouter = require('./routes/activities');
 
@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/accountHolders', accountHoldersRouter);
+app.use('/dashboards', dashboardsRouter);
 app.use('/', clientsRouter);
 app.use('/', activitesRouter);
 

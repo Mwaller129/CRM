@@ -20,7 +20,7 @@ const activitySchema = new Schema({
       timestamps: true
 
 });
-const accountHolderSchema = new Schema({
+const dashboardSchema = new Schema({
     Clients: {
         type: Schema.Types.ObjectId,
         ref: 'Client'
@@ -29,4 +29,4 @@ const accountHolderSchema = new Schema({
     Activities: [activitySchema]
    
 });
-module.exports = mongoose.model('AccountHolder', accountHolderSchema);
+module.exports = mongoose.model('Dashboard', dashboardSchema);
