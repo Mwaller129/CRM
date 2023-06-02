@@ -68,6 +68,25 @@ a {
 .client-header {
   font-size: 3rem;
 }
+#new-form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+}
+
+#new-form *,
+#add-client-form *,
+#add-activity-form * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#new-form input[type="submit"] {
+  grid-column: span 2;
+  width: 10rem;
+  margin-left: auto;
+}
 table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -88,7 +107,7 @@ tbody tr:nth-child(odd) {
   color: black;
 }
 input[type=text] {
-  width: 100%;
+  width: 25%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -98,7 +117,7 @@ tbody > a {
   justify-content: center;
 }
 
-.show-page {
+body > div {
   justify-content: center;
 
 }
