@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
+<section class="new-client-form">
 <form action="/clients" method="POST">
-    <h3>New Client</h3>
+    <h3 class="new-header">New Client</h3>
     <label>Client Name</label>
     <input type="text" name="clientName">
     <label>Client Phone Number</label>
@@ -19,9 +20,11 @@
         <option value="Phone Call">Phone Call</option>
         <option value="Appointment Scheduled">Appointment Scheduled</option>
     </select>
-        <label>Appointment Time</label>
-    <input type="date" name="appointmentTime">
-    <input type="submit" value="Add Client">
+        <label>Appointment Date</label>
+    <input type="date" name="appointmentDate">
+    <input class="add-client-btn" type="submit" value="Add Client">
     
 </form>
+
+</section>
 <%- include('../partials/footer') %>

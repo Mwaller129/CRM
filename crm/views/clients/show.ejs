@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<section id="show-page">
+<section class="client-show" id="show-page">
     <div>Client Name:</div>
     <div><%= clients.clientName %></div>
     <div>Client Phone Number:</div>
@@ -23,12 +23,12 @@
 </section>
 <td>
     <% clients.activity.forEach(function(c) { %>
-    <% if (user?._id.equals(user)) { %>
+
         <form action="/clients/<%= clients._id %>?_method=DELETE" class="delete-form" method="POST">
             <button type="submit">X</button>
         </form>
-   <% } %>
-   <% }); %>
+   <% }) %>
+ 
 </td>
 
 <%- include('../partials/footer') %>

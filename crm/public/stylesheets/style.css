@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   font-family: "Playfair Display", serif;
-  color: rgb(3, 1, 1);
+  color: white;
 }
   body {
   width: 100vw;
-  height: 140vh;
+  /* height: 100vh; */
   overflow: hidden;
   position: relative;
   font: 14px "Playfair Display", serif;
@@ -37,6 +37,7 @@ a {
   display: flex;
   font-size: medium;
 }
+
 .login {
   display: flex;
   justify-content: center;
@@ -44,9 +45,7 @@ a {
   height: 20px;
 }
 
-.login img {
-  height: 20px;
-}
+
 
 .section-one {
   margin: 11rem 2rem 0;
@@ -65,65 +64,84 @@ a {
   line-height: 1.5rem;
   font-size: x-large;
 }
-.client-header {
+.client-header, .new-header {
   font-size: 3rem;
 }
-#new-form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
-}
 
-#new-form *,
-#add-client-form *,
-#add-activity-form * {
+
+.new-client-form{
   font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#new-form input[type="submit"] {
-  grid-column: span 2;
-  width: 10rem;
-  margin-left: auto;
-}
-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 1em;
-  font-family: "Playfair Display", serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px gray;
-  box-sizing: content-box;
-}
-th, td {
-  padding: 0.25rem;
-  text-align: center;
+  font-weight: bold;
   justify-content: center;
-  color: black;
-}
-tbody tr:nth-child(odd) {
-  background: white;
-  color: black;
+  display: grid; 
+  padding-top: 10px;
+  margin: 10 10 10 10;
+  height: 100vh;
+  background-color: black;
 }
 input[type=text] {
-  width: 25%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+  color: black;
 }
-tbody > a {
-  color: whitesmoke;
-  justify-content: center;
+.add-client-btn  {
+  color: black;
 }
 
+.client-show{
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center; 
+  padding-top: 10px;
+  margin: 10 10 10 10; 
+  background-color: black;
+  height: 100vh;
+  
+}
+.client-show > a {
+  color: white;
+}
+.new-activity {
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  padding: 20px;
+  display: grid; 
+  margin: 10 10 10 10;
+  background-color: black;
+  height: 100vh;
+  color: white;
+}
+.add-activity-button {
+  background-color: black;
+}
+.client-index {
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  /* display: grid; */
+  margin: 10 10 10 10;
+  height: 100vh;
+  background-color: black;
+
+  color: white;
+}
+td {
+  padding: 20px;
+}
+.client-index > a {
+  color: white;
+}
+.details {
+  color: white;
+}
 body > div {
   justify-content: center;
 
 }
 .delete-form {
-  display: inline-block;
-  margin-right: 10px;
+  justify-content: center;
+  display: flex;
+ 
+  
 }
 .delete-form button {
   color: red;

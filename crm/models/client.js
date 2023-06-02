@@ -5,7 +5,7 @@ const activitySchema = new Schema({
     content: {
         type: String    
     },
-    appointmentTime: {
+    appointmentDate: {
         Date
     },
     client: {type: Schema.Types.ObjectId, ref: 'Client'},
@@ -38,7 +38,7 @@ const clientSchema = new Schema ({
         type: String,
         enum:['Phone Call', 'Appointment Scheduled']
     },
-    appointmentTime: {
+    appointmentDate: {
         type: Date
     },
     activity: [activitySchema]

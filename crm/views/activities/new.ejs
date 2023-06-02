@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+<section class="new-activity">
 <form id="add-activity-form" action="/clients/<%= clients._id %>/activities" method="POST">
     <label>Client</label>
     <input name="client" required value="<%= clients._id %>" type="hidden">
@@ -6,6 +7,7 @@
     <input type="text" name="content">
     <label>Date</label>
     <input type="date" name="date">
-    <input type="submit" value="Add Activity">
+    <input class="add-activity-button" type="submit" value="Add Activity">
 </form>
+</section>
 <%- include('../partials/footer') %>

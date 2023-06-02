@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
-
+<section class="client-index">
+    
 <h2 class="client-header">Client List</h2>
 <table id="list">
     <thead>
@@ -11,12 +12,15 @@
         <% clients.forEach(function(c) { %>
             <tr>
                 <td><%= c.clientName %></td>
+                <br>
                 <td><%= c.clientPhoneNumber %></td>
+                <br>
                 <td><%= c.clientEmailAddress %></td>
-                <td><a href="/clients/<%= c._id %>">More Details</a></td>
+                <td><a class="details" href="/clients/<%= c._id %>">More Details</a></td>
             </tr>
         <% }) %>
         <a href="/clients/new">Add New Client</a>
     </tbody>
 </table>
+</section>
 <%- include('../partials/footer') %>
