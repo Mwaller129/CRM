@@ -1,3 +1,4 @@
+const client = require('../models/client');
 const Client = require('../models/client')
 
 
@@ -27,18 +28,25 @@ const create = async (req, res) => {
         console.log(err)
     }
 }
-const deleteClient = (req, res, next) => {
-    Client.findOne({'clients._id': req.params.is, 'clients.user': req.user._id}).then(function(dashboard){
-        if (!client) return res.redirect('/client');
-       clients.removes(req.params.id);
-        clients.save().then(function() {
-            res.redirect(`/clients/${client._id}`);
-        }).catch(function(err) {
-            return next(err);
-        });
-    });
+
+const deleteClient = async (req, res) => {
+   await Client.findOneAndDelete(req.params.id)
+        res.redirect(`/clients`)
 
 }
+
+// const deleteClient = (req, res, next) => {
+//     Client.findOne({'clients._id': req.params.id, 'clients.user': req.user._id}).then(function(dashboard){
+//         if (!client) return res.redirect('/client');
+//        clients.removes(req.params.id);
+//         clients.save().then(function() {
+//             res.redirect(`/clients/${client._id}`);
+//         }).catch(function(err) {
+//             return next(err);
+//         });
+//     });
+
+// }
 
 module.exports = {
     index,

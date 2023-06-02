@@ -22,11 +22,13 @@
 <a href="/clients/<%= clients._id %>/activities/new">Add New Activity</a>
 </section>
 <td>
+    <% clients.activity.forEach(function(c) { %>
     <% if (user?._id.equals(user)) { %>
-        <form action="/clients/<%= clients._id %>?_method=DELETE" method="POST">
+        <form action="/clients/<%= clients._id %>?_method=DELETE" class="delete-form" method="POST">
             <button type="submit">X</button>
         </form>
    <% } %>
+   <% }); %>
 </td>
 
 <%- include('../partials/footer') %>

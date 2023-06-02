@@ -1,17 +1,19 @@
 <%- include('../partials/header') %>
 
-<h2>Client List</h2>
+<h2 class="client-header">Client List</h2>
 <table id="list">
     <thead>
         <tr>
-            <th>Client Name</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <% clients.forEach(function(c) { %>
             <tr>
                 <td><%= c.clientName %></td>
-                <td><a href="/clients/<%= c._id %>">DETAILS</a></td>
+                <td><%= c.clientPhoneNumber %></td>
+                <td><%= c.clientEmailAddress %></td>
+                <td><a href="/clients/<%= c._id %>">More Details</a></td>
             </tr>
         <% }) %>
         <a href="/clients/new">Add New Client</a>

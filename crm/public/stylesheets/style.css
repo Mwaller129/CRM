@@ -1,17 +1,30 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+  color: rgb(3, 1, 1);
+}
+  body {
+  width: 100vw;
+  height: 140vh;
+  overflow: hidden;
+  position: relative;
+  font: 14px "Playfair Display", serif;
   background-image: url(https://images.unsplash.com/photo-1683395287409-538f0b93e299?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
   color: whitesmoke;
+ 
   
 
 }
 body > nav {
-  grid-area: nav;
+  background: white;
+  text-align: center;
+  position:relative;
   display: flex;
   justify-content: center;
-  width: 50%;
-  padding: 50px;
+  width: 100%;
+  padding: 0px;
   font-size: medium;
 
 }
@@ -35,14 +48,39 @@ a {
   height: 20px;
 }
 
+.section-one {
+  margin: 11rem 2rem 0;
+}
+
+.header {
+  font-size: 6.5rem;
+  font-style: bold;
+  justify-content: center;
+}
+
+.section-one-paragraph {
+  margin: 2rem 0;
+  width: 70%;
+  max-width: 500px;
+  line-height: 1.5rem;
+  font-size: x-large;
+}
+.client-header {
+  font-size: 3rem;
+}
 table {
-  width: 100%;
-  border-collapse: separate;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1em;
+  font-family: "Playfair Display", serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px gray;
+  box-sizing: content-box;
 }
 th, td {
   padding: 0.25rem;
-  text-align: left;
-  border: 1px solid gray;
+  text-align: center;
+  justify-content: center;
   color: black;
 }
 tbody tr:nth-child(odd) {
@@ -54,4 +92,20 @@ input[type=text] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+}
+tbody > a {
+  color: whitesmoke;
+  justify-content: center;
+}
+
+.show-page {
+  justify-content: center;
+
+}
+.delete-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+.delete-form button {
+  color: red;
 }
